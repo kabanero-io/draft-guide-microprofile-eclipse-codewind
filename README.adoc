@@ -110,7 +110,7 @@ Choose a suitable name for your project and select *Finish* to save it.
 
 Your new project is created, built, and is compiling inside an Appsody Docker container. To see the status of the build, right-click the project in Codewind Explorer, select Show Log Files and chose **Appsody.log**. This will open the logs for the Docker container in a Console Window inside Eclipse.
 
-Once is has compiled and is running on localhost, the status will change from **[Stopped] [Build Successful]** to **[Running] [Build Successful]**. Right-click the Project in Codewind Explorer and select Open Application to view the app running on your local machine! 
+Once is has compiled and is running on localhost, the status will change from **[Stopped] [Build Successful]** to **[Running] [Build Successful]**. Right-click the Project in Codewind Explorer and select Open Application to view the app running on your local machine! Note: This may take a few minutes the first time it runs as dependencies are downloaded and installed.
 
 image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/open-application.png[Diagram
 shows the open application option]
