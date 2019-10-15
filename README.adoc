@@ -24,7 +24,7 @@
 :page-essential-order: 1
 :page-permalink: /guides/collection-microprofile/
 :imagesdir: /resources
-= Developing cloud native microservice applications with the Java MicroProfile Kabanero Collections and Eclipse IDE
+= Developing cloud native microservice applications with the Java MicroProfile Kabanero Collection and Eclipse IDE
 
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view
