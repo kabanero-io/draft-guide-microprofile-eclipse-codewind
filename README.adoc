@@ -88,7 +88,10 @@ To edit the Template Sources, the places Codewind looks for Collections from, ri
 
 After the right-click, a new box appears with a list of template sources, including Standard Codewind Templates, and Appsody Stacks. Kabanero Collections may already be showing in this list. If so, enable it with the tick box. If Kabanero Collections is not in the list, select Add enter `Kabanero Collections` as a description and for the URL field, enter `https://github.com/kabanero-io/collections/releases/latest/download/kabanero-index.json`.
 
-Disable Appsody Stacks by deselecting the tick box next to it, if both Kabanero Collections and Appsody Stacks are enabled at the same time, you will get two versions of some products, one found in Kabanero and one in Appsody.
+Disable Appsody Stacks by deselecting the tick box next to it, if both Kabanero Collections and Appsody Stacks are enabled at the same time, you will get two versions of some products, one found in Kabanero and one in Appsody. Your window will look something like this:
+
+image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/add-source.png[Diagram
+shows popup to add a new Source to Codewind]
 
 Codewind is now configured to use the *public* Kabanero Collection Hub.
 
