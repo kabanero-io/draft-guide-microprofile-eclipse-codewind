@@ -96,17 +96,14 @@ Codewind is now configured to use the *public* Kabanero Collection Hub.
 
 Find the **Projects (Local)** row inside the Codewind Explorer, which should be showing No Projects, and right-click and press Create New Project to get a list of available Templates and Collections.
 
-// Window showing Eclipse with the Codewind Explorer right clicked.
-image:rightclick-project[Diagram
+image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/rightclick-project.png[Diagram
 shows popup to create a new Project]
-
 
 In this guide, we are going to create a `java-microprofile` microservice application.
 
 From the **Create a new project** window, choose the *Kabanero Eclipse MicroProfile Template*, as shown in the following diagram:
 
-// Window showing the picking of a Kabanero Collection from the New Project list.
-image:create-project[Diagram
+image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/create-project.png[Diagram
 shows popup to create a new Project]
 
 Choose a suitable name for your project and select *Finish* to save it.
@@ -115,8 +112,7 @@ Your new project is created, built, and is compiling inside an Appsody Docker co
 
 Once is has compiled and is running on localhost, the status will change from **[Stopped] [Build Successful]** to **[Running] [Build Successful]**. Right-click the Project in Codewind Explorer and select Open Application to view the app running on your local machine! 
 
-// Image showing the open Application option.
-image:open-application[Diagram
+image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/open-application.png[Diagram
 shows the open application option]
 
 == Understanding the project layout
@@ -125,8 +121,7 @@ Projects are created with a default set of files, which you can find in a Projec
 
 If you have created a New Project and aren't seeing in in the Project Explorer, Eclipse may be pointing at the wrong workspace. To fix this, go to `File > Switch Workspace > Other` and navigate to `codewind-workspace`.
 
-// Showing project layout inside the project explorer pane.
-image:project-explorer[Diagram
+image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/project-explorer.png[Diagram
 shows the Project Explorer view]
 
 Open the Application by right-clicking the Project from the Codewind Explorer and selecting **Open Application**. 
@@ -175,8 +170,7 @@ You can perform a number of operations through the Eclipse Codewind Explorer int
 that help you develop, test, and debug your application. Right-click on your project to see a
 list of available tasks:
 
-// Meny list of available options on project
-image:rightclick-options[Diagram
+image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/rightclick-options.png[Diagram
 shows the right click options]
 
 - you can disable the automated build of your project and build it on demand
@@ -186,8 +180,7 @@ shows the right click options]
 Overview. Eclipse displays information about your project, including the location, status, and any ports in use. The output is similar to the
 following screenshot:
 
-// Screenshot of overview page
-image:project-overview[Diagram
+image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/project-overview.png[Diagram
 shows the Project Overview page]
 
 - you can stop the application, by clicking the *Disable project* button.
