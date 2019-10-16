@@ -39,7 +39,7 @@ the guide in published form, view it on the https://kabanero.io/guides/{projecti
 You will learn how to build a simple containerized microservice application from a Kabanero Java MicroProfile
 Collection in your Eclipse IDE.
 
-The Kabanero Collection you will use for this example is `java-microprofile` . There is another Java Collection called `java-sprint-boot2` but this example is going to focus on MicroProfile.
+The Kabanero Collection you will use for this example is `java-microprofile`. If you are a Java developer and are familiar with the Spring framework, you could choose to go with the `java-spring-boot2` Kabanero Collection instead. Sample microservices applications used with Spring are shown in the https://kabanero.io/guides/collection-springboot2/[Developing  cloud  native  microservices  with  the  Spring  Boot  Collection  and  Appsody CLI guide].
 
 // =================================================================================================
 // Prerequisites
@@ -48,7 +48,7 @@ The Kabanero Collection you will use for this example is `java-microprofile` . T
 == Prerequisites
 
 . You must have https://docs.docker.com/get-started/[Docker] installed.
-. You must install the Eclipse Codewind Extension from the https://marketplace.eclipse.org/content/codewind[Eclipse Marketplace], which creates a *CODEWIND* workspace and downloads Docker images to your Docker registry
+. You must install the *Eclipse Codewind Extension* from the https://marketplace.eclipse.org/content/codewind[Eclipse Marketplace], which creates a *CODEWIND* workspace and downloads Docker images to your Docker registry.
 . (Optional) If you have an enterprise-specific Kabanero Collection Hub,
 you need the URL to your index file.
 
@@ -62,16 +62,16 @@ Everything is now set up, and you're ready to create your first project!
 
 Kabanero brings together open source technologies that provide a framework for developing cloud native microservice
 applications. As a developer, you are likely to have a preferred IDE for writing application
-code. In this guide, we will show you how you can develop a simple containerized microservice application that is
+code. In this guide, we are going to develop a simple containerized microservice application that is
 based on the Java MicroProfile Kabanero Collection in the Eclipse IDE.
 
 Kabanero contains Appsody, which is designed to enable applications to be built and tested inside a Docker container.
-To access Appsody functions from your IDE, you need Eclipse Codewind, which provides a rich user interface that integrates
-seamlessly into VS Code. Codewind also provides performance and monitoring tools to help you test and debug applications
+To access Appsody functions from your IDE, you need Eclipse Codewind, a plugin that provides a rich user interface that integrates
+seamlessly into the Eclipse IDE. Codewind also provides performance and monitoring tools to help you test and debug applications
 in containers.
 
-When you install Eclipse Codewind, an extension to Appsody is automatically installed as part of your
-Codewind workspace. By default, Codewind is configured to use the latest Appsody stacks that are
+When you install *Eclipse Codewind*, an extension to Appsody is automatically installed as part of your
+*CODEWIND* workspace. By default, Codewind is configured to use the latest Appsody stacks that are
 available in the Appsody GitHub repository. However, those stacks are not integrated with Kabanero.
 In order to use Appsody with Kabanero you need to configure Codewind to use a Kabanero Collection Hub.
 
@@ -84,11 +84,15 @@ Hub locally. The public collection is updated on a regular basis, so by making a
 To keep things simple in this guide you will add the latest *public* Kabanero Collection Hub repository instead of a clone of
 a Kabanero Collection Hub repository.
 
-To edit the Template Sources, the places Codewind looks for Collections from, right-click the Projects (Local) section of the Codewind Explorer and select `Manage Template Sources`. If you cannot see the Codewind Explorer, show it by going to Window > Show View > Codewind Explorer. If Codewind Explorer is not in that list, go to Other instead and select it in the dialog box.
+With *Codewind* installed, make sure you have it showing in one of Eclipses side panels. If you cannot see Codewind Explorer, show it by going to the *Menu Bar* and selecting *Window* > *Show View* > *Other* > *Codewind Explorer* and pressing *OK*.
 
-After the right-click, a new box appears with a list of template sources, including Standard Codewind Templates, and Appsody Stacks. Kabanero Collections may already be showing in this list. If so, enable it with the tick box. If Kabanero Collections is not in the list, select Add enter `Kabanero Collections` as a description and for the URL field, enter `https://github.com/kabanero-io/collections/releases/latest/download/kabanero-index.json`.
+Now we can edit the Template Sources, the places Codewind looks for Collections from. Right-click the *Projects (Local)* section of the Codewind Explorer and select *Manage Template Sources*. 
 
-Disable Appsody Stacks by deselecting the tick box next to it, if both Kabanero Collections and Appsody Stacks are enabled at the same time, you will get two versions of some products, one found in Kabanero and one in Appsody. Your window will look something like this:
+After the right-click, a new box appears with a list of template sources, including *Standard Codewind Templates*, and *Appsody Stacks*. Kabanero Collections may already be showing in this list. If so, enable it with the *tick box*. If Kabanero Collections are not in the list, select *Add* and enter `Kabanero Collections` as a description and for the URL field, enter `https://github.com/kabanero-io/collections/releases/latest/download/kabanero-index.json`.
+
+Uncheck the box for Appsody Stacks so that the list of templates contains only Kabanero Collections. 
+
+*Note*: This is how you manage your template sources, and how you add them if your system architect provides you with a Collection to use.
 
 image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/add-source.png[Diagram
 shows popup to add a new Source to Codewind]
@@ -97,7 +101,7 @@ Codewind is now configured to use the *public* Kabanero Collection Hub.
 
 == Initializing your project
 
-Find the **Projects (Local)** row inside the Codewind Explorer, which should be showing No Projects, and right-click and press Create New Project to get a list of available Templates and Collections.
+In the Codewind Explorer view, right-click on **Projects** and select **Create New Project** to get a list of available Collections.
 
 image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/rightclick-project.png[Diagram
 shows popup to create a new Project]
@@ -111,32 +115,32 @@ shows popup to create a new Project]
 
 Choose a suitable name for your project and select *Finish* to save it.
 
-Your new project is created, built, and is compiling inside an Appsody Docker container. To see the status of the build, right-click the project in Codewind Explorer, select Show Log Files and chose **Appsody.log**. This will open the logs for the Docker container in a Console Window inside Eclipse.
+Your new project is created, built, and compiled inside an Appsody Docker container. To see the status of the build, right-click the project in *Codewind Explorer*, select *Show Log Files* and chose *Appsody.log*. This will open the logs for the Docker container in a *Console Window*.
 
-Once is has compiled and is running on localhost, the status will change from **[Stopped] [Build Successful]** to **[Running] [Build Successful]**. Right-click the Project in Codewind Explorer and select Open Application to view the app running on your local machine! Note: This may take a few minutes the first time it runs as dependencies are downloaded and installed.
+When the application is compiled and running on localhost, the status changes from **[Stopped] [Build Successful]** to **[Running] [Build Successful]**. Right-click the project in Codewind Explorer and select *Open Application* to view the app running on your local machine. 
 
 image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/open-application.png[Diagram
 shows the open application option]
 
+*Note*: This takes longer the first time it runs because dependencies are downloaded and installed.
+
 == Understanding the project layout
 
 Projects are created with a default set of files, which you can find in a Project Explorer in your *CODEWIND-WORKSPACE*. 
-
-If you have created a New Project and aren't seeing in in the Project Explorer, Eclipse may be pointing at the wrong workspace. To fix this, go to `File > Switch Workspace > Other` and navigate to `codewind-workspace`.
 
 image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/project-explorer.png[Diagram
 shows the Project Explorer view]
 
 Open the Application by right-clicking the Project from the Codewind Explorer and selecting **Open Application**. 
 
-The Eclipse browser opens to display "Welcome to your Appsody Microservice" on `http://127.0.0.1:<local_port_number>/`. Make a note
-of the <local_port_number> for your next task.
+The Eclipse browser opens to display *"Welcome to your Appsody Microservice"* on `http://127.0.0.1:<local_port_number>/`. Make a note
+of the `<local_port_number>` for your next task.
 
 == Creating and updating the application
 
 You are now going to create a new route that listens on `http://127.0.0.1:<local_port_number>/starter/hello`.
 
-In Project Explorer, right click on the dev.appsody.starter package located inside the Java Resources > src/main/java folder and create a new file called `HelloResource`. Ensure you are using the Java Resources folder and not the raw path located beneath this section.
+In *Project Explorer*, right click on the `dev.appsody.starter` package located inside the `Java Resources` > `src/main/java` folder and create a new file called `HelloResource`. Ensure you are using the `Java Resources` directory and not the raw path located beneath this section.
 
 Add the following code to this new file:
 
@@ -165,7 +169,7 @@ Save the changes.
 Codewind watches for file changes and automatically recompiles your application. Point your browser to
 `http://127.0.0.1:<local_port_number>/starter/hello` to see your new route, which displays **Hello World!**.
 
-This code is creating a new path on **/hello** to return a String to the browser saying `Hello World!`. The starter part of the full URL comes from the `StarterApplication.java` file which defines the routes as all beginning with **/starter**.
+This code is creating a new path on `/hello` to return a String to the browser saying *Hello World!*. The starter part of the full URL comes from the `StarterApplication.java` file, which defines the routes as all beginning with `/starter`.
 
 == Testing and debugging the application
 
@@ -179,8 +183,7 @@ shows the right click options]
 - you can disable the automated build of your project and build it on demand
 - you can restart your application in run mode or debug mode
 - you can view the available logs to troubleshoot issues
-- you can find information about the running app by opening the Project
-Overview. Eclipse displays information about your project, including the location, status, and any ports in use. The output is similar to the
+- you can find information about the running app in **Open Project Overview**. Eclipse displays information about your project, including the location, status, and any ports in use. The output is similar to the
 following screenshot:
 
 image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/project-overview.png[Diagram
