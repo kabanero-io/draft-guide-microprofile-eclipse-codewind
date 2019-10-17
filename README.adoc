@@ -1,3 +1,14 @@
+---
+permalink: /guides/microprofile-eclipse-codewind
+---
+:page-layout: guide
+:page-duration: 20 minutes
+:page-releasedate: 2019-10-18
+:page-description: Learn how to create, run, update, deploy, and deliver a simple cloud native application using the Eclipse MicroProfile Kabanero Collection
+:page-tags: ['Collection', 'MicroProfile', 'Eclipse']
+:page-guide-category: collections
+= Developing cloud native microservice applications with the Java MicroProfile Kabanero Collection and Eclipse IDE
+
 //	Copyright 2019 IBM Corporation and others.
 //
 //	Licensed under the Apache License, Version 2.0 (the "License");
@@ -12,19 +23,6 @@
 //	See the License for the specific language governing permissions and
 //	limitations under the License.
 //
-:page-layout: guide
-:projectid: collection-microprofile
-:page-duration: 20 minutes
-:page-releasedate: 2019-09-13
-:page-description: Learn how to create, run, update, deploy, and deliver a simple cloud native application using the Eclipse MicroProfile Kabanero Collection
-:guide-author: Kabanero
-:page-tags: ['Collection', 'MicroProfile', 'Eclipse']
-:page-guide-category: collections
-:page-essential: true
-:page-essential-order: 1
-:page-permalink: /guides/collection-microprofile/
-:imagesdir: /resources
-= Developing cloud native microservice applications with the Java MicroProfile Kabanero Collection and Eclipse IDE
 
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view
@@ -84,18 +82,22 @@ Hub locally. The public collection is updated on a regular basis, so by making a
 To keep things simple in this guide you will add the latest *public* Kabanero Collection Hub repository instead of a clone of
 a Kabanero Collection Hub repository.
 
-With *Codewind* installed, make sure you have it showing in one of Eclipses side panels. If you cannot see Codewind Explorer, show it by going to the *Menu Bar* and selecting *Window* > *Show View* > *Other* > *Codewind Explorer* and pressing *OK*.
+With *Codewind* installed, make sure you have it showing in one of the Eclipse side panels. If you cannot see Codewind Explorer,
+go to the *Menu Bar* and select *Window* > *Show View* > *Other* > *Codewind Explorer* and press *OK*.
 
-Now we can edit the Template Sources, the places Codewind looks for Collections from. Right-click the *Projects (Local)* section of the Codewind Explorer and select *Manage Template Sources*. 
+Now we can edit the Template Sources where Codewind expects to find the Collections. Right-click *Projects (Local)* and
+select *Manage Template Sources*. A new box appears with a list of template sources, including *Standard Codewind Templates*,
+and *Appsody Stacks*.
 
-After the right-click, a new box appears with a list of template sources, including *Standard Codewind Templates*, and *Appsody Stacks*. Kabanero Collections may already be showing in this list. If so, enable it with the *tick box*. If Kabanero Collections are not in the list, select *Add* and enter `Kabanero Collections` as a description and for the URL field, enter `https://github.com/kabanero-io/collections/releases/latest/download/kabanero-index.json`.
+image::/img/guide/add-source.png[link="/img/guide/add-source.png" alt="Diagram shows popup to add a new Source to Codewind."]
 
-Uncheck the box for Appsody Stacks so that the list of templates contains only Kabanero Collections. 
+Kabanero Collections might already be showing in this list. If so, enable it with the *tick box*.
+If Kabanero Collections are not in the list, select *Add* and enter `Kabanero Collections` as a description. In the URL field,
+enter `https://github.com/kabanero-io/collections/releases/latest/download/kabanero-index.json`.
 
-*Note*: This is how you manage your template sources, and how you add them if your system architect provides you with a Collection to use.
+*Note*: If you've been provided with a Kabanero Collection Hub URL for your organisation you can repeat the last step to add it.
 
-image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/add-source.png[Diagram
-shows popup to add a new Source to Codewind]
+Uncheck the box for Appsody Stacks so that the list of templates contains only Kabanero Collections.
 
 Codewind is now configured to use the *public* Kabanero Collection Hub.
 
@@ -103,35 +105,31 @@ Codewind is now configured to use the *public* Kabanero Collection Hub.
 
 In the Codewind Explorer view, right-click on **Projects** and select **Create New Project** to get a list of available Collections.
 
-image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/rightclick-project.png[Diagram
-shows popup to create a new Project]
+image::/img/guide/rightclick-project.png[link="/img/guide/rightclick-project.png" alt="Diagram shows popup to create a new Project."]
 
 In this guide, we are going to create a `java-microprofile` microservice application.
 
 From the **Create a new project** window, choose the *Kabanero Eclipse MicroProfile Template*, as shown in the following diagram:
 
-image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/create-project.png[Diagram
-shows popup to create a new Project]
+image::/img/guide/create-project.png[link="/img/guide/create-project.png" alt="Diagram shows popup to create a new Project."]
 
 Choose a suitable name for your project and select *Finish* to save it.
 
 Your new project is created, built, and compiled inside an Appsody Docker container. To see the status of the build, right-click the project in *Codewind Explorer*, select *Show Log Files* and chose *Appsody.log*. This will open the logs for the Docker container in a *Console Window*.
 
-When the application is compiled and running on localhost, the status changes from **[Stopped] [Build Successful]** to **[Running] [Build Successful]**. Right-click the project in Codewind Explorer and select *Open Application* to view the app running on your local machine. 
+When the application is compiled and running on localhost, the status changes from **[Stopped] [Build Successful]** to **[Running] [Build Successful]**. Right-click the project in Codewind Explorer and select *Open Application* to view the app running on your local machine.
 
-image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/open-application.png[Diagram
-shows the open application option]
+image::/img/guide/open-application.png[link="/img/guide/open-application.png" alt="Diagram shows the open application option."]
 
 *Note*: This takes longer the first time it runs because dependencies are downloaded and installed.
 
 == Understanding the project layout
 
-Projects are created with a default set of files, which you can find in a Project Explorer in your *CODEWIND-WORKSPACE*. 
+Projects are created with a default set of files, which you can find in a Project Explorer in your *CODEWIND-WORKSPACE*.
 
-image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/project-explorer.png[Diagram
-shows the Project Explorer view]
+image::/img/guide/project-explorer.png[link="/img/guide/project-explorer.png" alt="Diagram shows the Project Explorer view.""]
 
-Open the Application by right-clicking the Project from the Codewind Explorer and selecting **Open Application**. 
+Open the Application by right-clicking the Project from the Codewind Explorer and selecting **Open Application**.
 
 The Eclipse browser opens to display *"Welcome to your Appsody Microservice"* on `http://127.0.0.1:<local_port_number>/`. Make a note
 of the `<local_port_number>` for your next task.
@@ -177,8 +175,7 @@ You can perform a number of operations through the Eclipse Codewind Explorer int
 that help you develop, test, and debug your application. Right-click on your project to see a
 list of available tasks:
 
-image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/rightclick-options.png[Diagram
-shows the right click options]
+image::/img/guide/rightclick-options.png[link="/img/guide/rightclick-options.png" alt="Diagram shows the right click options"]
 
 - you can disable the automated build of your project and build it on demand
 - you can restart your application in run mode or debug mode
@@ -186,8 +183,7 @@ shows the right click options]
 - you can find information about the running app in **Open Project Overview**. Eclipse displays information about your project, including the location, status, and any ports in use. The output is similar to the
 following screenshot:
 
-image:https://github.com/kabanero-io/guide-microprofile-eclipse-codewind/blob/master/resources/project-overview.png[Diagram
-shows the Project Overview page]
+image::/img/guide/project-overview.png[link="/img/guide/project-overview.png" alt="Diagram shows the Project Overview page."]
 
 - you can stop the application, by clicking the *Disable project* button.
 
