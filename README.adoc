@@ -1,13 +1,13 @@
 ---
-permalink: /guides/microprofile-eclipse-codewind
+permalink: /guides/microprofile-eclipse-codewind/
 ---
 :page-layout: guide
 :page-duration: 20 minutes
 :page-releasedate: 2019-10-18
-:page-description: Learn how to create, run, update, deploy, and deliver a simple cloud native application using the Eclipse MicroProfile Kabanero Collection
-:page-tags: ['Collection', 'MicroProfile', 'Eclipse']
+:page-description: Learn how to create, run, update, deploy, and deliver a simple cloud native application using the MicroProfile Kabanero Collection
+:page-tags: ['Collection', 'MicroProfile', 'Eclipse', 'Java']
 :page-guide-category: collections
-= Developing cloud native microservice applications with the Java MicroProfile Kabanero Collection and Eclipse IDE
+= Developing cloud native microservice applications with the Eclipse MicroProfile Kabanero Collection and Eclipse IDE
 
 //	Copyright 2019 IBM Corporation and others.
 //
@@ -37,7 +37,7 @@ the guide in published form, view it on the https://kabanero.io/guides/{projecti
 You will learn how to build a simple containerized microservice application from a Kabanero Java MicroProfile
 Collection in your Eclipse IDE.
 
-The Kabanero Collection you will use for this example is `java-microprofile`. If you are a Java developer and are familiar with the Spring framework, you could choose to go with the `java-spring-boot2` Kabanero Collection instead. Sample microservices applications used with Spring are shown in the https://kabanero.io/guides/collection-springboot2/[Developing  cloud  native  microservices  with  the  Spring  Boot  Collection  and  Appsody CLI guide].
+The Kabanero Collection you will use for this example is `java-microprofile`. If you are a Java developer and are familiar with the Spring framework, you could choose the `java-spring-boot2` Kabanero Collection instead. Sample microservices applications used with Spring are shown in the https://kabanero.io/guides/collection-springboot2/[Developing  cloud  native  microservices  with  the  Spring  Boot  Collection  and  Appsody CLI guide].
 
 // =================================================================================================
 // Prerequisites
@@ -89,7 +89,7 @@ Now we can edit the Template Sources where Codewind expects to find the Collecti
 select *Manage Template Sources*. A new box appears with a list of template sources, including *Standard Codewind Templates*,
 and *Appsody Stacks*.
 
-image::/img/guide/add-source.png[link="/img/guide/add-source.png" alt="Diagram shows popup to add a new Source to Codewind."]
+image::/img/guide/microprofile-eclipse-codewind-add-source.png[link="/img/guide/microprofile-eclipse-codewind-add-source.png" alt="Diagram shows popup to add a new Source to Codewind."]
 
 Kabanero Collections might already be showing in this list. If so, enable it with the *tick box*.
 If Kabanero Collections are not in the list, select *Add* and enter `Kabanero Collections` as a description. In the URL field,
@@ -105,13 +105,13 @@ Codewind is now configured to use the *public* Kabanero Collection Hub.
 
 In the Codewind Explorer view, right-click on **Projects** and select **Create New Project** to get a list of available Collections.
 
-image::/img/guide/rightclick-project.png[link="/img/guide/rightclick-project.png" alt="Diagram shows popup to create a new Project."]
+image::/img/guide/microprofile-eclipse-codewind-rightclick-project.png[link="/img/guide/microprofile-eclipse-codewind-rightclick-project.png" alt="Diagram shows popup to create a new Project."]
 
 In this guide, we are going to create a `java-microprofile` microservice application.
 
 From the **Create a new project** window, choose the *Kabanero Eclipse MicroProfile Template*, as shown in the following diagram:
 
-image::/img/guide/create-project.png[link="/img/guide/create-project.png" alt="Diagram shows popup to create a new Project."]
+image::/img/guide/microprofile-eclipse-codewind-create-project.png[link="/img/guide/microprofile-eclipse-codewind-create-project.png" alt="Diagram shows popup to create a new Project."]
 
 Choose a suitable name for your project and select *Finish* to save it.
 
@@ -119,7 +119,7 @@ Your new project is created, built, and compiled inside an Appsody Docker contai
 
 When the application is compiled and running on localhost, the status changes from **[Stopped] [Build Successful]** to **[Running] [Build Successful]**. Right-click the project in Codewind Explorer and select *Open Application* to view the app running on your local machine.
 
-image::/img/guide/open-application.png[link="/img/guide/open-application.png" alt="Diagram shows the open application option."]
+image::/img/guide/microprofile-eclipse-codewind-open-application.png[link="/img/guide/microprofile-eclipse-codewind-open-application.png" alt="Diagram shows the open application option."]
 
 *Note*: This takes longer the first time it runs because dependencies are downloaded and installed.
 
@@ -127,7 +127,7 @@ image::/img/guide/open-application.png[link="/img/guide/open-application.png" al
 
 Projects are created with a default set of files, which you can find in a Project Explorer in your *CODEWIND-WORKSPACE*.
 
-image::/img/guide/project-explorer.png[link="/img/guide/project-explorer.png" alt="Diagram shows the Project Explorer view.""]
+image::/img/guide/microprofile-eclipse-codewind-project-explorer.png[link="/img/guide/microprofile-eclipse-codewind-project-explorer.png" alt="Diagram shows the Project Explorer view.""]
 
 Open the Application by right-clicking the Project from the Codewind Explorer and selecting **Open Application**.
 
@@ -175,7 +175,7 @@ You can perform a number of operations through the Eclipse Codewind Explorer int
 that help you develop, test, and debug your application. Right-click on your project to see a
 list of available tasks:
 
-image::/img/guide/rightclick-options.png[link="/img/guide/rightclick-options.png" alt="Diagram shows the right click options"]
+image::/img/guide/microprofile-eclipse-codewind-rightclick-options.png[link="/img/guide/microprofile-eclipse-codewind-rightclick-options.png" alt="Diagram shows the right click options"]
 
 - you can disable the automated build of your project and build it on demand
 - you can restart your application in run mode or debug mode
@@ -183,7 +183,7 @@ image::/img/guide/rightclick-options.png[link="/img/guide/rightclick-options.png
 - you can find information about the running app in **Open Project Overview**. Eclipse displays information about your project, including the location, status, and any ports in use. The output is similar to the
 following screenshot:
 
-image::/img/guide/project-overview.png[link="/img/guide/project-overview.png" alt="Diagram shows the Project Overview page."]
+image::/img/guide/microprofile-eclipse-codewind-project-overview.png[link="/img/guide/microprofile-eclipse-codewind-project-overview.png" alt="Diagram shows the Project Overview page."]
 
 - you can stop the application, by clicking the *Disable project* button.
 
