@@ -7,7 +7,7 @@ permalink: /guides/microprofile-eclipse-codewind/
 :page-description: Learn how to create, run, update, deploy, and deliver a simple cloud native application using the MicroProfile Kabanero Collection and Eclipse IDE
 :page-tags: ['Collection', 'MicroProfile', 'Eclipse', 'Java']
 :page-guide-category: collections
-= Working with Kabanero Collections in your Eclipse IDE
+= Developing with Kabanero Collections in your Eclipse IDE
 
 //	Copyright 2019 IBM Corporation and others.
 //
