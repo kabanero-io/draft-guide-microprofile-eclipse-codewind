@@ -34,6 +34,8 @@ the guide in published form, view it on the https://kabanero.io/guides/{projecti
 
 == What you will learn
 
+**NOTE: Use this guide only for Kabanero V0.5.0 and earlier releases.**
+
 You will use the Kabanero Eclipse MicroProfile Collection in your Eclipse IDE to create and run a simple cloud native microservice Java application.
 
 Kabanero's Eclipse MicroProfile Collection contains all the components you need to develop your microservice application, including the Eclipse MicroProfile application stack and any necessary container build and deployment artifacts.
